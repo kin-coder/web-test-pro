@@ -1,0 +1,24 @@
+
+<div class="body text-center">
+  <div class="form-signin fadeIn animated">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+      <label for="client_email" class="sr-only">Email address</label>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class: "form-control" %>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <%= f.password_field :password, autocomplete: "current-password",placeholder:"Mot de passe", class: "form-control" %>
+      <div class="checkbox mb-3">
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">CONNEXION</button>
+      <div class="share mt-2"><%= render "devise/shared/links" %></div>
+      <p class="mt-5 mb-3 text-light">&copy; 2017-2019</p>
+    <% end %>
+  </div>
+</div>
